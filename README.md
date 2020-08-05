@@ -1,6 +1,6 @@
 # flutter_blog
 
-A new Flutter application.
+A mobile application where users can create, edit and delete the blogs, developed using Flutter.Firebase auth, Cloud Firestore and Realtime Databse are also implemented.
 
 ## Getting Started
 
