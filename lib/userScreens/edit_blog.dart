@@ -19,7 +19,7 @@ class _EditBlogState extends State<EditBlog> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("edit blog"),
+        title: Text("Edit Blog"),
         elevation: 0.0,
       ),
       body: Form(

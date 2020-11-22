@@ -65,7 +65,7 @@ class AuthService{
   Future signInWithEmailAndPassword(String email,String password) async {
     try{
       AuthResult result = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      FirebaseUser user = result.user;
+      FirebaseUser user = await _auth.currentUser();
 
       DocumentSnapshot userInfo = await getUserInfo(user.uid);
       await writeDataLocally(key: 'fName', value: userInfo['fName']);
@@ -73,8 +73,6 @@ class AuthService{
       await writeDataLocally(key: 'mobile', value: userInfo['mobile']);
       await writeDataLocally(key: 'email', value: userInfo['email']);
       await writeDataLocally(key: 'password', value: userInfo['password']);
-
-      print(userInfo['fName']);
 
       return _userFromFirebaseUser(user);
     }

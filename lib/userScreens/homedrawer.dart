@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:async';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_blog/services/auth.dart';
 import 'package:flutter_blog/services/app_tools.dart';
 import '../main.dart';
@@ -23,10 +25,10 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
     final AuthService _auth = AuthService();
 
-  @override
+    @override
     void initState(){
       getCurrentUser();
-      super.initState();
+      //super.initState();
     }
 
     Future getCurrentUser() async{
@@ -45,20 +47,20 @@ class _HomeDrawerState extends State<HomeDrawer> {
           _createHeader(),
           _createDrawerItem(
             icon: Icons.collections_bookmark,
-            text: 'blogs',
+            text: 'Blogs',
             onTap: () {
               Navigator.pop(context);
               Navigator.pushReplacementNamed(context, Routes.blogs);
             }
           ),
-          _createDrawerItem(
+          /*_createDrawerItem(
             icon: Icons.person,
             text: 'Profile',
             onTap: () {
               Navigator.pop(context);
               Navigator.pushReplacementNamed(context, Routes.profile);
             }
-          ),
+          ),*/
           _createDrawerItem(
               icon: Icons.settings,
               text: 'Settings',
@@ -108,11 +110,11 @@ class _HomeDrawerState extends State<HomeDrawer> {
 
   Widget _createHeader() {
     return UserAccountsDrawerHeader(
-      accountName: Text(fName+" "+lName),
-      accountEmail: Text(email),
+      accountName: Text("Blog"),
+      accountEmail: Text("Community"),
       currentAccountPicture: new CircleAvatar(
         backgroundColor: Colors.white,
-        child: Icon(Icons.person),
+        child: Icon(Icons.library_books),
       ),
       decoration: BoxDecoration(
         color:Colors.blue,

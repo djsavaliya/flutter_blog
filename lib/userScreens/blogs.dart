@@ -55,7 +55,7 @@ class _LiveState extends State<Live> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("blogs"),
+        title: Text("Blogs"),
         backgroundColor: Colors.blue,
         /*actions: <Widget>[
           FlatButton.icon(

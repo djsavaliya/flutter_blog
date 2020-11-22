@@ -16,8 +16,22 @@ class _ContactState extends State<Contact> {
         title: Text('Contact Us'),
         backgroundColor: Colors.blue,
       ),
-      body: Center(
-        child: Text('Developer Contact : savaliyadarshil12884@yahoo.com'),
+      body: Padding(
+        padding: new EdgeInsets.fromLTRB(50.0,50.0,0.0,0.0),
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              'Developer Contact :',
+              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25.0),
+            ),
+            Text(
+              'savaliyadarshil12884@yahoo.com',
+              style: TextStyle(fontSize: 20.0),
+            ),
+          ],
+        ),
       ),
     );
   }

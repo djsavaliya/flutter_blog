@@ -34,7 +34,7 @@ class _SettingsState extends State<Settings> {
       ),
       drawer: HomeDrawer(),
       body: Center(
-          child: Text("Change App Settings Here"),
+          child: Text("User can Change App Settings from Here"),
       ),
     );
   }
